@@ -1,0 +1,120 @@
+<div dir="ltr" style="text-align: left;" trbidi="on">
+<br /></div>
+
+<Body oncontextmenu="return false;" ondragstart="return false" onselectstart="return false">
+
+<span style="color: #3d85c6;"><span style="font-family: Georgia,&quot;Times New Roman&quot;,serif;"><span style="font-size: large;">This Calculator is based on Civil Service Exam Notification CSE-P 2014. Will be updated as New Notification publish. </span></span></span>
+<span style="color: #76a5af;"><span style="font-size: large;"><br /></span></span>
+<b><span style="color: #76a5af;"><span style="font-size: large;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">How to Use it?</span></span></span></b><br />
+<span style="font-family: &quot;Courier New&quot;,Courier,monospace;"><b><span style="color: #76a5af;"><span style="font-size: large;"><br />Enter Total Attempt&nbsp; &amp; Wrong Attempt in respective box.</span></span><span style="font-size: large;"><br /></span></b></span><br />
+<br />
+
+<Center>
+<Table Border=1 BorderColor=#106375>
+<TR><TD colspan="2" Align=Center><span style="color: #6fa8dc;"><span style="font-size: large;">Paper 1&nbsp; </span></span> </TD></TR>
+
+
+<TR>
+<TD BGColor=#e4e7f3>Attempt:</TD>
+<TD><input id="attemptgs1" style="background-color:white" name="attemptgs1" onkeyup="this.value = minmax(this.value, 0, 100) " type="number"/></TD>
+</TR>
+<TR><TD BGColor=#e4e7f3>Wrong</TD>
+<TD><input id="wronggs1" style="background-color:white" name="wronggs1" onkeyup="this.value = minmax(this.value, 0, 100)" type="number" /></TD>
+</TR>
+</Table>
+
+<BR/>
+
+<Table Border=1 BorderColor=#106375>
+
+<TR><TD Align=Center Colspan="2"><span style="color: #6fa8dc;"><span style="font-size: large;">
+Paper 2
+</span></span></TR></TD>
+
+<TR>
+<TD BGColor=#e4e7f3>Attempt:</TD>
+<TD>
+<input id="attemptgs2" style="background-color:white" name="attemptgs2" onkeyup="this.value=minmax80(this.value, 0, 80)" type="number"/>
+</TD>
+</tr>
+
+<tr>
+<td BGColor=#e4e7f3> Wrong </td>
+<TD>
+<input id="wronggs2" style="background-color:white" name="wronggs2" onkeyup="this.value=minmax80(this.value, 0, 80)" type="number">
+</TD>
+</tr>
+</table>
+
+
+
+<br>
+
+<input onclick="gen_score()" type="button" style="cursor: pointer; border: solid 5px; width:300; height:100; color: #6fa8dc; font-size:200%;" value="Click here to see score"/>
+</Center>
+
+<br/>
+<div id="result">
+</div>
+<div id="total">
+</div>
+<script type="text/javascript">
+
+
+
+<!-- hide this script tag's contents from old browsers
+//Civil Services Preliminary Exam Score Calculator - by MahammadVasim Khatri (mvasim007@gmail.com)
+
+//Credit must stay intact for use
+
+
+function minmax(value, min, max) 
+{
+    if(parseInt(value) < 0 || isNaN(value)) 
+        return 0; 
+    else if(parseInt(value) > 100) 
+        return 100; 
+    else return value;
+}
+
+function minmax80(value, min, max) 
+{
+    if(parseInt(value) < 0 || isNaN(value)) 
+        return 0; 
+    else if(parseInt(value) > 80) 
+        return 80; 
+    else return value;
+}
+
+
+
+var cgs1, wgs1, sgs1, cgs2, wgs2, sgs2,srt,str1;
+
+function gen_score()
+ {
+    cgs1 = document.getElementById('attemptgs1').value;
+    wgs1 = document.getElementById('wronggs1').value;
+    sgs1 = (cgs1 - wgs1 - (wgs1 / 3)) * 2;
+    cgs2 = document.getElementById('attemptgs2').value;
+    wgs2 = document.getElementById('wronggs2').value;
+    sgs2 = (cgs2 - wgs2 - (wgs2 / 3)) * 2.5;
+    str="Paper 1 Score is " + sgs1 + "<BR/> Paper 2 Score is " + sgs2;
+    str1="<BR/> Total Score is " + (sgs1 + sgs2);
+    str = str.fontsize("5").fontcolor("#006400").bold();
+    str1 = str1.fontsize("6").fontcolor("#006400").bold();
+    document.getElementById('result').innerHTML =str;
+    document.getElementById('total').innerHTML = str1;
+
+
+}
+// -- done hiding from old browsers </script>
+
+<br />
+<br />
+
+
+Copyright ©<a href="https://www.blogger.com/blogger.g?blogID=7579905815683806072#" target="_blank">Civil Services Preliminary Exam Score Calculator - by MahammadVasim Khatri (mvasim007@gmail.com)</a>
+<BR/>
+<Center> <a href="https://plus.google.com/communities/108429972132950597232" target="_blank">Join Our Community</a>
+<a href="https://plus.google.com/+AtaullahKhatri" target="_blank">The False Masters</a> </Center>
+</Body>
