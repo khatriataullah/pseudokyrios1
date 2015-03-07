@@ -24,35 +24,35 @@ Function disableclick(event)
 
 <TABLE Align=Center BGColor=#d0e0ff BORDER=5 BORDERCOLOR=#2b5797>
     <TR>
-    <TD height="30">Total Score:</TD>
-    <TD height="30"><input type="text" style="background-color:white" id="TS" name="TS"></TD>
+    <TD height="30" Align=right>Maximum Score:</TD>
+    <TD height="30"><input type="text" style="text-align:right; background-color:white" id="MS" name="MS"></TD>
     </TR>
 
     <TR>
-    <TD height="30">Total Questions:</TD>
-    <TD height="30"><input type="text" style="background-color:white"  id="TQ" name="TQ"></TD>
+    <TD height="30" Align=right>Maximum Questions:</TD>
+    <TD height="30"><input type="text" style="text-align:right; background-color:white"  id="MQ" name="MQ"></TD>
     </TR>
 
     <TR>
-    <TD height="30">Attempted:</TD>
-    <TD height="30"><input type="text" style="background-color:white" id="AT" name="AT"></TD>
+    <TD height="30" Align=right>Attempted:</TD>
+    <TD height="30"><input type="text" style="text-align:right; background-color:white" id="AT" name="AT"></TD>
     </TR>
 
     <TR>
-    <TD height="30">Wrong Answers:</TD>
-    <TD height="30"><input type="text" style="background-color:white" id="WA" name="WA"></TD>
+    <TD height="30" Align=right>Wrong Answers:</TD>
+    <TD height="30"><input type="text" style="text-align:right; background-color:white" id="WA" name="WA"></TD>
     </TR>
 
     <TR>
-    <TD height="30">Negative Scoring:</TD>
-    <TD height="30"><input type="text" style="background-color:white" id="NS" name="NS" PlaceHolder="0.25, 0.33 etc."></TD>
+    <TD height="30" Align=right>Negative Scoring:</TD>
+    <TD height="30"><input type="text" style="text-align:right; background-color:white" id="NS" name="NS" PlaceHolder="0.25, 0.33 etc."></TD>
     </TR>
 
  
     <TR BGColor=#ffdcff>
-    <TD height="30"><button onclick="myFunction()">Calculate SCORE</button></TD>
+    <TD height="30" Align=center><button onclick="myFunction()" style="cursor: pointer; border: solid 3px; border-radius: 0.4em; border-color: green;">Calculate SCORE</button></TD>
 
-    <TD height="30"><Center><font face="Agency FB" size="6" color="red">
+    <TD height="30" Align=center><font face="Agency FB" size="6" color="red">
     <B><output id="score"></output></B>
      <script>
 
@@ -62,8 +62,8 @@ Function disableclick(event)
 //Credit must stay intact for use
 
       function myFunction() {
-        var A = document.getElementById("TS").value;
-        var B = document.getElementById("TQ").value;
+        var A = document.getElementById("MS").value;
+        var B = document.getElementById("MQ").value;
         var C = document.getElementById("AT").value;
         var D = document.getElementById("WA").value;
         var E = document.getElementById("NS").value;
@@ -74,16 +74,16 @@ Function disableclick(event)
 
  // -- done hiding from old browsers -->
 
-    </script></Center></Font></TD>
+    </script></Font></TD>
     </TR>
 </TABLE>
 
 <BR></BR>
 
 <P><B><U>INSTRUCTIONS</U></B></P>
-<p><U>Total Score:</U> Total score of the exam</p>
-<P><U>Total Questions:</U> Total number of questions in the exam</P>
-<P><U>Attempted:</U> Your attempt in the exam</P>
+<p><U>Maximum Score:</U> Maximum total score of the exam.</p>
+<P><U>Maximum Questions:</U> Total number of questions in the exam.</P>
+<P><U>Attempted:</U> No. of questions you attempted in the exam.</P>
 <P><U>Wrong Answers:</U> Wrong answers according to answer-key</P>
 <P><U>Negative Scoring:</U> Negative scoring system of exam, e.g. 0.25, 0.33 etc.</P>
 <H2><P Align=Center><I>Click on </I><B>"Calculate Score"</B></P></H2>
