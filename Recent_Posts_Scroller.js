@@ -1,77 +1,77 @@
 /*
- *	Advenced Recent Posts Scroller Version 1.0.0.1 For Blogger
- *	Widget By TheFalseMasters
- *	Url: http://www.TheFalseMasters.blogspot.in/
- *	Copyright © 2015, by Ataullah (TheFalseMasters)
+ *	Advenced Recent Posts Scroller Version 3 For Blogger
+ *	Widget By Way2Blogging
+ *	Url: http://www.way2blogging..org/
+ *	Copyright © 2011, by Harish (way2blogging)
  */
 
-function TFMAdvRecentPostsScrollerv3(json) {
-	var TFMrecentposts;
-	var TFMpostlink;
-	var TFMobj;
-	var TFMmarqueehtml;
-	var TFMmarqueehtml2;
-	var byTheFalseMasters;
-	var TFMlinkgap;
-	var TFMposttargetlink;
-	var TFMBullet;
+function w2bAdvRecentPostsScrollerv3(json) {
+	var w2brecentposts;
+	var w2bpostlink;
+	var w2bobj;
+	var w2bmarqueehtml;
+	var w2bmarqueehtml2;
+	var byWay2blogging;
+	var w2blinkgap;
+	var w2bposttargetlink;
+	var w2bBullet;
 	try {
-		TFMmarqueehtml = "\<marquee behavior=\"scroll\" onmouseover=\"this.stop();\" onmouseout=\"this.start();\" ";
+		w2bmarqueehtml = "\<marquee behavior=\"scroll\" onmouseover=\"this.stop();\" onmouseout=\"this.start();\" ";
 
-		if (TFMScrollAmount) {
-			TFMmarqueehtml = TFMmarqueehtml + " scrollamount = \"" + TFMScrollAmount + "%\"";
+		if (w2bScrollAmount) {
+			w2bmarqueehtml = w2bmarqueehtml + " scrollamount = \"" + w2bScrollAmount + "%\"";
 		} 
-		if (TFMWidth) {
-			TFMmarqueehtml = TFMmarqueehtml + " width = \"" + TFMWidth + "%\"";
+		if (w2bWidth) {
+			w2bmarqueehtml = w2bmarqueehtml + " width = \"" + w2bWidth + "%\"";
 		} else {
-			TFMmarqueehtml = TFMmarqueehtml + " width = \"100%\"";
+			w2bmarqueehtml = w2bmarqueehtml + " width = \"100%\"";
 		}
-		if (TFMScrollDelay) {
-			TFMmarqueehtml = TFMmarqueehtml + " scrolldelay = \"" + TFMScrollDelay + "\"";
+		if (w2bScrollDelay) {
+			w2bmarqueehtml = w2bmarqueehtml + " scrolldelay = \"" + w2bScrollDelay + "\"";
 		}
-		if (TFMDirection) {
-			TFMmarqueehtml = TFMmarqueehtml + " direction = \"" + TFMDirection + "\"\>";
-			if (TFMDirection == "left" || TFMDirection == "right") {
-				TFMlinkgap = "&nbsp;&nbsp;&nbsp;";
+		if (w2bDirection) {
+			w2bmarqueehtml = w2bmarqueehtml + " direction = \"" + w2bDirection + "\"\>";
+			if (w2bDirection == "left" || w2bDirection == "right") {
+				w2blinkgap = "&nbsp;&nbsp;&nbsp;";
 			} else {
-				TFMlinkgap = "\<br/\>";
+				w2blinkgap = "\<br/\>";
 			}
 		}
-		if (TFMtargetlink == "yes") {
-			TFMposttargetlink = " target= \"_blank\" ";
+		if (w2btargetlink == "yes") {
+			w2bposttargetlink = " target= \"_blank\" ";
 		} else {
-			TFMposttargetlink = " ";
+			w2bposttargetlink = " ";
 		}
-		if (TFMimagebullet == "yes") {
-			TFMBullet = " \<img class=\"TFMbulletbimg\" src=\"" + TFMimgurl + "\" />";
+		if (w2bimagebullet == "yes") {
+			w2bBullet = " \<img class=\"w2bbulletbimg\" src=\"" + w2bimgurl + "\" />";
 		} else {
-			TFMBullet = TFMBulletchar;
+			w2bBullet = w2bBulletchar;
 		}
-		TFMmarqueehtml2 = "\</marquee\>"
-		TFMrecentposts = "";
-		for (var TFMrp = 0; TFMrp < TFMnumPosts; TFMrp++) {
-			var TFMobj = json.feed.entry[TFMrp];
-			if (TFMrp == json.feed.entry.length) break;
-			for (var TFMcc = 0; TFMcc < TFMobj.link.length; TFMcc++) {
-				if (TFMobj.link[TFMcc].rel == 'alternate') {
-					TFMpostlink = TFMobj.link[TFMcc].href;
+		w2bmarqueehtml2 = "\</marquee\>"
+		w2brecentposts = "";
+		for (var w2brp = 0; w2brp < w2bnumPosts; w2brp++) {
+			var w2bobj = json.feed.entry[w2brp];
+			if (w2brp == json.feed.entry.length) break;
+			for (var w2bcc = 0; w2bcc < w2bobj.link.length; w2bcc++) {
+				if (w2bobj.link[w2bcc].rel == 'alternate') {
+					w2bpostlink = w2bobj.link[w2bcc].href;
 					break;
 				}
 			}
-			TFMrecentposts = TFMrecentposts + TFMBullet + " \<a " + TFMposttargetlink + " href=\"" + TFMpostlink + "\">" + TFMobj.title.$t + "\</a\>" + TFMlinkgap;
+			w2brecentposts = w2brecentposts + w2bBullet + " \<a " + w2bposttargetlink + " href=\"" + w2bpostlink + "\">" + w2bobj.title.$t + "\</a\>" + w2blinkgap;
 		}
-		byTheFalseMasters = "\<a tareget =\"_blank\" href=\"http://www.TheFalseMasters.blogspot.in/2011/01/add-auto-scrolling-recent-posts-widget.html\"\>+  Grab this Widget\</a\> on \<a tareget =\"_blank\" href=\"http://www.TheFalseMasters.blogspot.in/\"\>TheFalseMasters\</a\>";
-		if (TFMDirection == "left") {
-			TFMrecentposts = TFMrecentposts + "&nbsp;&nbsp;&nbsp;" + byTheFalseMasters;
-		} else if (TFMDirection == "right") {
-			TFMrecentposts = byTheFalseMasters + "&nbsp;&nbsp;&nbsp;" + TFMrecentposts;
-		} else if (TFMDirection == "up") {
-			TFMrecentposts = TFMrecentposts + "\<br/\>" + byTheFalseMasters;
+		byWay2blogging = "\<a tareget =\"_blank\" href=\"http://www.way2blogging.org/2011/01/add-auto-scrolling-recent-posts-widget.html\"\>+  Grab this Widget\</a\> on \<a tareget =\"_blank\" href=\"http://www.way2blogging.org/\"\>Way2Blogging\</a\>";
+		if (w2bDirection == "left") {
+			w2brecentposts = w2brecentposts + "&nbsp;&nbsp;&nbsp;" + byWay2blogging;
+		} else if (w2bDirection == "right") {
+			w2brecentposts = byWay2blogging + "&nbsp;&nbsp;&nbsp;" + w2brecentposts;
+		} else if (w2bDirection == "up") {
+			w2brecentposts = w2brecentposts + "\<br/\>" + byWay2blogging;
 		} else {
-			TFMrecentposts = byTheFalseMasters + "\<br/\>" + TFMrecentposts;
+			w2brecentposts = byWay2blogging + "\<br/\>" + w2brecentposts;
 		}
-		document.write("\<style style=\"text/css\"\>.TheFalseMasters-srp{font-size:" + TFMfontsize + "px;background:#" + TFMbgcolor + ";font-weight:bold;}.TheFalseMasters-srp a{color:#" + TFMlinkcolor + ";text-decoration:none;}.TheFalseMasters-srp a:hover{color:#" + TFMlinkhovercolor + ";}img.TFMbulletbimg{vertical-align:middle;border:none;}\</style\>")
-		document.write("\<div class=\"TheFalseMasters-srp\"\>" + TFMmarqueehtml + TFMrecentposts + TFMmarqueehtml2 + "\</div\>")
+		document.write("\<style style=\"text/css\"\>.way2blogging-srp{font-size:" + w2bfontsize + "px;background:#" + w2bbgcolor + ";font-weight:bold;}.way2blogging-srp a{color:#" + w2blinkcolor + ";text-decoration:none;}.way2blogging-srp a:hover{color:#" + w2blinkhovercolor + ";}img.w2bbulletbimg{vertical-align:middle;border:none;}\</style\>")
+		document.write("\<div class=\"way2blogging-srp\"\>" + w2bmarqueehtml + w2brecentposts + w2bmarqueehtml2 + "\</div\>")
 	} catch (exception) {
 		alert(exception);
 	}
